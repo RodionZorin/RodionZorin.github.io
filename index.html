@@ -3,6 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <title>Benchmarks</title>
+  <!-- DataTables + jQuery -->
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
 </head>
 <body>
   <h1>Benchmarks</h1>
@@ -12,10 +16,65 @@
       <li>Standardized datasets to evaluate and compare model capabilities</li>
       <li>For reasoning LLMs: check if the model is reasoning or repeating patterns</li>
     </ul>
-  <blockquote>
-  “The development of a robust benchmark is crucial for documenting the advancements in reasoning LLMs capabilities and for identifying promising research directions for future progress.”
-  <cite>— Li et al., 2025</cite>
-  </blockquote>
+    <blockquote>
+    “The development of a robust benchmark is crucial for documenting the advancements in reasoning LLMs capabilities and for identifying promising research directions for future progress.”
+    <cite>— Li et al., 2025</cite>
+    </blockquote>
   </p>
+
+  <h2>Benchmark Reasoning Categories</h2>
+
+<table id="benchmark-table" class="display">
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th>Description</th>
+      <th>Benchmarks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Math Problems</td>
+      <td>Solves mathematical problems showcasing capabilities of reasoning LLMs.</td>
+      <td>AIME, MATH-500, OlympiadBench</td>
+    </tr>
+    <tr>
+      <td>Code Problems</td>
+      <td>Uses logical thinking and structured problem-solving in programming tasks.</td>
+      <td>Codeforces, LiveCodeBench</td>
+    </tr>
+    <tr>
+      <td>Scientific Problems</td>
+      <td>Involves multi-domain reasoning across physics, chemistry, and biology.</td>
+      <td>GPQA Diamond, MMLU-Pro</td>
+    </tr>
+    <tr>
+      <td>Agent Reasoning</td>
+      <td>Tests planning and decision-making in interactive and tool-using environments.</td>
+      <td>WebShop, WebArena, SciWorld</td>
+    </tr>
+    <tr>
+      <td>Medical Reasoning</td>
+      <td>Mimics diagnostic reasoning and treatment planning in clinical contexts.</td>
+      <td>MedQA, Medbullets</td>
+    </tr>
+    <tr>
+      <td>Multimodal Reasoning</td>
+      <td>Combines text and visual input to test cross-modal reasoning skills.</td>
+      <td>MMMU, MathVista, MM-IQ</td>
+    </tr>
+  </tbody>
+</table>
+<script>
+  $(document).ready(function () {
+    $('#benchmark-table').DataTable({
+      paging: false,
+      info: false,
+      language: {
+        search: "🔍 Search benchmarks:"
+      }
+    });
+  });
+</script>
 </body>
 </html>
